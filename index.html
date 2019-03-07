@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>测试</title>
+		<title>可视化平台分布</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+      <meta http-equiv="Cache-Control" content="no-siteapp" />
+      <!-- 启用360浏览器的极速模式(webkit) -->
+      <meta name="renderer" content="webkit">
+      <meta content="telephone=no,email=no" name="format-detection">
+      <meta name="full-screen" content="yes">
+      <meta name="x5-fullscreen" content="true">
+      <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 		<style>
           *{
       moz-user-select: -moz-none;
@@ -184,7 +191,7 @@ function init() {
      //  plane.position.z = 0;
      //  plane.receiveShadow = true;
      //  function createPhongMesh(geom) {
-     //      let planetTexture = THREE.ImageUtils.loadTexture("./car_modle/site.jpg");
+     //      let planetTexture = THREE.ImageUtils.loadTexture("./site/site.jpg");
      //      // let normalTexture = THREE.ImageUtils.loadTexture("./assets/textures/general/plaster-normal.jpg");
      //      let planetMaterial = new THREE.MeshPhongMaterial();
      //      // planetMaterial.normalMap = normalTexture;
@@ -241,13 +248,13 @@ function init() {
   				THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
 
   				let mtlLoader = new THREE.MTLLoader()
-  					.setPath( './car_modle/' )
+  					.setPath( './site/' )
   					.load( 'over.mtl', function ( materials ) {
 
   						materials.preload();
   						let objLoader =new THREE.OBJLoader()
   							.setMaterials( materials )
-  							.setPath( './car_modle/')
+  							.setPath( './site/')
   							.load( 'over.obj', function ( loadedMesh ) {
   								loadedMesh.scale.set(0.5, 0.5,0.5);
                   loadedMesh.position.x = 0;
